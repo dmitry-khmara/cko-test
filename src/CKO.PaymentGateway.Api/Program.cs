@@ -1,5 +1,5 @@
 using CKO.PaymentGateway.Application.BuildingBlocks.DomainEvents;
-using CKO.PaymentGateway.Application.CreatePaymentRequest;
+using CKO.PaymentGateway.Application.CreatePayment;
 using CKO.PaymentGateway.BankSimulator;
 using CKO.PaymentGateway.DataAccess;
 using MediatR;

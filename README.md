@@ -1,9 +1,12 @@
 # Checkout.com Payment Gateway Test
 
+This document describes my approach to solving the test as well as the instructions how to run it.
+
 ## 1. Running solution
 
 Solution makes use of a Docker Compose project which describes two services: .NET Core API and Postgres local DB.
-In order to run the soluction locally, run:
+
+In order to run the soluction locally, execute the following:
 
 `docker-compose build`
 `docker-compose up`
@@ -54,6 +57,29 @@ Example unsuccessful response (HTTP code 400):
 }
 ```
 
+### 1.1.2. Querying a payment
+
+Issue a GET request to the http://localhost:5080/payments/{paymentId}?merchantId={merchantId} endpoint with your tool of choice. 
+
+Example:
+
+http://localhost:5080/payments/32900fbf-532e-461d-89f0-0ca9ccc2cf16?merchantId=941d05b6-ce68-4dd9-b973-5134ccca0637
+
+Returns 200 OK with the following body if the payment exists and belongs to the merchant:
+
+```json
+{
+"amount": 350,
+"currency": "USD",
+"cardNumber": "************1881",
+"expiryMonth": 2,
+"expiryYear": 2040,
+"status": "Success"
+}
+```
+
+The endpoint returns 404 Not Found if the payment does not exist or if it does not belong to the merchant.
+
 ### 1.2. Running tests
 
 In order to run unit tests, perform the following command:
@@ -64,7 +90,7 @@ dotnet test test/CKO.PaymentGateway.Domain.UnitTests/CKO.PaymentGateway.Domain.U
 
 ## 2. Solution Structure
 
-My goal was to separate business and operational concerns so that the solution would be easily to modify without introducing unexpected side effects. I've opted in for using MediatR for separating commands and queries, as well as to support events. That allowed to build the solution around in-memory messaging, which, if needed, would allow for easy separation of capabilities into independently deployed services.
+My goal was to separate business, coordination, and infrastructure concerns so that the solution would be easily to modify without introducing unexpected side effects. I've opted for using MediatR to separat commands and queries, as well as to support events. That allowed to build the solution around in-memory messaging, which, if needed, would allow to easily slice system capabilities into independently deployed services.
 
 Solution is divided in separate projects in order to maintain loose coupling between various concerns:
 
@@ -77,9 +103,11 @@ Solution is divided in separate projects in order to maintain loose coupling bet
 
 ## 3. Tests
 
-My testing strategy was to focus on testing the domain logic. I have added unit tests under the `CKO.PaymentGateway.Domain.UnitTests` project in order to test the behavior of payments and related entities.
+My testing strategy was to focus on testing the domain logic. I have added unit tests under the `CKO.PaymentGateway.Domain.UnitTests` project in order to test the behavior of payments and related entities. 
 
 I left integration tests out because of the time limitations.
+
+I have left the unit tests for `PaymentAmount` class because the lack of time.
 
 ## 4. Points of improvement
 
@@ -92,7 +120,7 @@ This is solution is not production ready. To make it such, I would do the follow
 
 ## 5. Migrations
 
-The following are the commands to add, remove, and run migrations. The API project will also run the migrations automatically on a startup.
+The following are the commands to add, remove, and run migrations during dev work. The API project will also run the migrations automatically on a startup.
 
 Add:
 `dotnet ef migrations add <Migration Name> --context PaymentGatewayContext -s src/CKO.PaymentGateway.Api/CKO.PaymentGateway.Api.csproj -p src/CKO.PaymentGateway.DataAccess/CKO.PaymentGateway.DataAccess.csproj --output-dir Migrations`

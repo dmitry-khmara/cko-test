@@ -16,4 +16,8 @@
     <ProjectReference Include="..\CKO.PaymentGateway.Domain\CKO.PaymentGateway.Domain.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="GetPayment\" />
+  </ItemGroup>
+
 </Project>

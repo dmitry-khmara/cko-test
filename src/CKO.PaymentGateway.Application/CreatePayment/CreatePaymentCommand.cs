@@ -2,7 +2,7 @@
 using CKO.PaymentGateway.Domain.Payments;
 using MediatR;
 
-namespace CKO.PaymentGateway.Application.CreatePaymentRequest;
+namespace CKO.PaymentGateway.Application.CreatePayment;
 
 public class CreatePaymentCommand: IRequest<Guid>
 {

@@ -1,5 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
-using CKO.PaymentGateway.Application.CreatePaymentRequest;
+using CKO.PaymentGateway.Application.CreatePayment;
 using CKO.PaymentGateway.Domain.Cards;
 using CKO.PaymentGateway.Domain.Payments;
 

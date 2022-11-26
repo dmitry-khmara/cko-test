@@ -26,4 +26,8 @@
     <ProjectReference Include="..\CKO.PaymentGateway.DataAccess\CKO.PaymentGateway.DataAccess.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Controllers\GetPayment\" />
+  </ItemGroup>
+
 </Project>

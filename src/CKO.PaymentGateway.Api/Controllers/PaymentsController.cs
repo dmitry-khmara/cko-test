@@ -1,5 +1,7 @@
 using CKO.PaymentGateway.Api.Controllers.CreatePayment;
-using CKO.PaymentGateway.Application.CreatePaymentRequest;
+using CKO.PaymentGateway.Api.Controllers.GetPayment;
+using CKO.PaymentGateway.Application.CreatePayment;
+using CKO.PaymentGateway.Application.GetPayment;
 using CKO.PaymentGateway.Domain.Cards;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
@@ -40,6 +42,18 @@ namespace CKO.PaymentGateway.Api.Controllers
             var paymentId = await _mediator.Send(command);
 
             return Ok(paymentId);
+        }
+
+        [HttpGet("{paymentId}")]
+        public async Task<IActionResult> GetPayment(Guid paymentId, [FromQuery] Guid merchantId)
+        {
+
+            var payment = await _mediator.Send(new GetPaymentQuery(paymentId, merchantId));
+
+            if (payment == null)
+                return NotFound();
+
+            return Ok(new GetPaymentResponse(payment));
         }
     }
 }
