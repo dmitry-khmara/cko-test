@@ -3,17 +3,24 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.1.32319.34
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CKO.PaymentGateway.Api", "src\CKO.PaymentGateway.Api\CKO.PaymentGateway.Api.csproj", "{BE7329AE-B1D4-4E58-9948-93D070B4C632}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CKO.PaymentGateway.Api", "src\CKO.PaymentGateway.Api\CKO.PaymentGateway.Api.csproj", "{BE7329AE-B1D4-4E58-9948-93D070B4C632}"
 EndProject
 Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{88F1BB31-B893-4E5B-8C29-0523EE7BD493}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CKO.PaymentGateway.DataAccess", "src\CKO.PaymentGateway.DataAccess\CKO.PaymentGateway.DataAccess.csproj", "{54B585D1-B515-41FE-A38E-39F2C66E4B21}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CKO.PaymentGateway.DataAccess", "src\CKO.PaymentGateway.DataAccess\CKO.PaymentGateway.DataAccess.csproj", "{54B585D1-B515-41FE-A38E-39F2C66E4B21}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CKO.PaymentGateway.Domain", "src\CKO.PaymentGateway.Domain\CKO.PaymentGateway.Domain.csproj", "{8D23151B-064B-4FD4-A57C-C8E429790861}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CKO.PaymentGateway.Domain", "src\CKO.PaymentGateway.Domain\CKO.PaymentGateway.Domain.csproj", "{8D23151B-064B-4FD4-A57C-C8E429790861}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CKO.PaymentGateway.Application", "src\CKO.PaymentGateway.Application\CKO.PaymentGateway.Application.csproj", "{369320FC-D75A-4428-B963-CCB8E4EE68C6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CKO.PaymentGateway.Application", "src\CKO.PaymentGateway.Application\CKO.PaymentGateway.Application.csproj", "{369320FC-D75A-4428-B963-CCB8E4EE68C6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CKO.PaymentGateway.Domain.UnitTests", "test\CKO.PaymentGateway.Domain.UnitTests\CKO.PaymentGateway.Domain.UnitTests.csproj", "{C56FD1FE-0344-4D14-8BC8-A2EB8D2F1FF8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CKO.PaymentGateway.Domain.UnitTests", "test\CKO.PaymentGateway.Domain.UnitTests\CKO.PaymentGateway.Domain.UnitTests.csproj", "{C56FD1FE-0344-4D14-8BC8-A2EB8D2F1FF8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CKO.PaymentGateway.BankSimulator", "src\CKO.PaymentGateway.BankSimulator\CKO.PaymentGateway.BankSimulator.csproj", "{B6822657-D041-4FD8-A6C9-F1A94A091423}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{2563CF56-B380-436A-9BCF-4BBFE7DD4B5C}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +52,10 @@ Global
 		{C56FD1FE-0344-4D14-8BC8-A2EB8D2F1FF8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C56FD1FE-0344-4D14-8BC8-A2EB8D2F1FF8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C56FD1FE-0344-4D14-8BC8-A2EB8D2F1FF8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B6822657-D041-4FD8-A6C9-F1A94A091423}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B6822657-D041-4FD8-A6C9-F1A94A091423}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B6822657-D041-4FD8-A6C9-F1A94A091423}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B6822657-D041-4FD8-A6C9-F1A94A091423}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

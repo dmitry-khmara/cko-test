@@ -11,8 +11,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\CKO.PaymentGateway.BankSimulator\CKO.PaymentGateway.BankSimulator.csproj" />
-    <ProjectReference Include="..\CKO.PaymentGateway.DataAccess\CKO.PaymentGateway.DataAccess.csproj" />
     <ProjectReference Include="..\CKO.PaymentGateway.Domain\CKO.PaymentGateway.Domain.csproj" />
   </ItemGroup>
 

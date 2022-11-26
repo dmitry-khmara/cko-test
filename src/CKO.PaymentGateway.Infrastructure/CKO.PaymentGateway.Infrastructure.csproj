@@ -8,12 +8,16 @@
 
   <ItemGroup>
     <PackageReference Include="MediatR" Version="11.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.11" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\CKO.PaymentGateway.BankSimulator\CKO.PaymentGateway.BankSimulator.csproj" />
-    <ProjectReference Include="..\CKO.PaymentGateway.DataAccess\CKO.PaymentGateway.DataAccess.csproj" />
+    <ProjectReference Include="..\CKO.PaymentGateway.Application\CKO.PaymentGateway.Application.csproj" />
     <ProjectReference Include="..\CKO.PaymentGateway.Domain\CKO.PaymentGateway.Domain.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="BuildingBlocks\DomainEvents\" />
   </ItemGroup>
 
 </Project>
